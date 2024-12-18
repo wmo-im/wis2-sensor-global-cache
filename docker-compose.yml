@@ -1,0 +1,37 @@
+version: "3.7"
+services:
+  sensorglobalcache:
+    container_name: sensorglobalcache
+    image: golfvert/sensorglobalcache:1.0.0
+    environment:
+      - MQTT_TOPIC=#
+      - SENSOR_CENTRE_ID=io-wis2dev-sensor-global-cache
+      - MQTT_GB_BROKER=
+      - MQTT_GB_USERNAME=
+      - MQTT_GB_PASSWORD=
+      - GB_ID=
+      - MQTT_GC_1_BROKER=
+      - MQTT_GC_1_USERNAME=
+      - MQTT_GC_1_PASSWORD=
+      - GC_1_ID=
+      - MQTT_GC_2_BROKER=
+      - MQTT_GC_2_USERNAME=
+      - MQTT_GC_2_PASSWORD=
+      - GC_2_ID=
+      - REDIS_URL=redissgc:6379
+      - CACHE_DELAY_LOW=120
+      - CACHE_DELAY_MED=300
+      - CACHE_DELAY_MAX=600
+    networks:
+      - traefik
+    restart: unless-stopped
+  redissensorglobalcache:
+    container_name: redissgc
+    image: redis:latest
+    networks:
+      - traefik
+    environment:
+      - REDIS_ARGS="--appendonly no"
+networks:
+   traefik:
+      external: true
