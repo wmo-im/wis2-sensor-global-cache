@@ -1,8 +1,12 @@
 {
     "name": "SensorGlobalCache",
-    "description": "A Node-RED Project",
-    "version": "0.0.1",
-    "dependencies": {},
+    "description": "A tool based on NodeRed to create metrics for assessing WIS2 Global Cache",
+    "version": "0.9",
+    "dependencies": {
+        "@golfvert/node-red-redis": "1.1.0",
+        "node-red-contrib-msg-speed": "2.1.0",
+        "node-red-contrib-prometheus-exporter": "1.0.5"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",
