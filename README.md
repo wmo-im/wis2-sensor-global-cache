@@ -4,7 +4,7 @@ SensorGlobalCache
 ### About
 
 This is a tool based on Node Red and Redis to assess the performance of the WIS2 Global Cache.
-The metrics defined here https://github.com/wmo-im/wis2-metric-hierarchy/blob/main/metrics/sgc.csv are implemented.
+The metrics defined here https://github.com/wmo-im/wis2-metric-hierarchy/blob/main/metrics/scgc.csv are implemented.
 
 The easiest way to use it is with docker.
 
